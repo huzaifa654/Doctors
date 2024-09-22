@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+    background: #5F6FFF;
+    color: white;
+    padding-right: 17px;
+    padding-left: 17px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 47px;
+
+}
+
+.whitebtn {
+    background: white;
+    color: black;
+    display: flex;
+    padding-right: 17px;
+    padding-left: 17px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 47px;
+    margin-top: 17px;
+
+}
+
+.whitebtn img {
+    width: 14px;
+    margin-left: 10px;
+    align-self: center;
+}

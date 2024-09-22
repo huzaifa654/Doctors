@@ -1,0 +1,22 @@
+.special {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.special ul {
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.special ul img {
+    width: 120px;
+}
+
+.special ul li {
+    margin-top: 16px;
+    align-self: center;
+    text-align: center;
+}

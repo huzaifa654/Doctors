@@ -1,0 +1,36 @@
+.hero {
+    background: #5F6FFF;
+    width: 100%;
+    display: flex;
+    padding: 40px;
+    border-radius: 20px;
+    align-items: center;
+
+}
+
+.appoint {
+    margin-top: 20px;
+}
+
+.appoint h1 {
+    font-size: 63px;
+    font-weight: 600;
+    color: white;
+}
+
+.info {
+    display: flex;
+    font-size: 18px;
+    color: white;
+    margin-top: 12px;
+}
+
+.info p {
+    margin-left: 12px;
+
+}
+
+.headerimg {
+    width: 882px;
+    height: 569px;
+}
