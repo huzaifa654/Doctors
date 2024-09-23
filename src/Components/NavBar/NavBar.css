@@ -32,6 +32,10 @@
 }
 
 .hrr {
-    background-color: #5F6FFF;
+    background: #5F6FFF;
 
+}
+
+.nav ul li hr {
+    background-color: #5F6FFF;
 }
