@@ -32,21 +32,24 @@
 import React from 'react'
 import "./NavBar.css"
 import { logo } from '../../assets/assets_frontend/assets'
+import { useNavigate } from 'react-router-dom'
 
 export default function NavBar() {
+    const navigate = useNavigate()
+
     return (
         <div className='nav'>
             <img src={logo} alt="" />
             <nav>
                 <ul className='content'>
-                    <li className='elements'>HOME </li>
-                    <li className='elements'>All Doctors  </li>
-                    <li className='elements'>ABOUT  </li>
-                    <li className='elements'>CONTACT </li>
+                    <li className='elements' onClick={() => navigate('/')}>HOME </li>
+                    <li className='elements' onClick={() => navigate('/docters')}>All Doctors  </li>
+                    <li className='elements' onClick={() => navigate('/about')}>ABOUT  </li>
+                    <li className='elements' onClick={() => navigate('/contact')}>CONTACT </li>
                 </ul>
             </nav>
             <div>
-                <button className='btn'>Create Account</button>
+                <button className='btn' onClick={() => navigate('/login')}>Create Account</button>
             </div>
         </div>
     )

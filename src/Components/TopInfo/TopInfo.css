@@ -1,0 +1,50 @@
+.TopInfo {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: start;
+    gap: 20px;
+    margin-left: 20px;
+    margin-top: 35px;
+}
+
+.TopInfo ul {
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    width: 80%;
+    border-radius: 12px;
+    border-width: 2px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    /* Transition properties */
+
+}
+
+.TopInfo ul:hover {
+    transform: scale(1.1);
+
+}
+
+.speciality {
+    font-size: 15px;
+    color: #4B5563;
+    font-weight: 400;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #EAEFFF;
+    justify-content: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+
+
+}
+
+.topContainer {
+    cursor: pointer;
+
+}
