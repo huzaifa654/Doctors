@@ -1,0 +1,83 @@
+.TopInfo {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: start;
+    gap: 20px;
+    margin-left: 20px;
+    margin-top: 35px;
+}
+
+.TopInfo ul {
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    width: 80%;
+    border-radius: 12px;
+    border-width: 2px;
+
+}
+
+.speciality {
+    font-size: 15px;
+    color: #4B5563;
+    font-weight: 400;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #EAEFFF;
+    justify-content: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+
+}
+
+.imageContainer img {
+    width: 215px;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+
+}
+
+
+.docinfo {
+    margin-top: 20px;
+    margin-left: 10px;
+    padding-bottom: 12px;
+
+}
+
+.name {
+    font-size: 22px;
+    font-weight: 500;
+    color: #1F2937;
+    margin-top: 12px;
+
+}
+
+.morebtn {
+    background: #EAEFFF;
+    color: #4B5563;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 214px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 45px;
+}

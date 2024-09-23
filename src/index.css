@@ -26,6 +26,14 @@
 
 }
 
+.whitebtn:hover {
+    scale: 200px;
+    transition: all;
+    animation-duration: 300;
+    background: black;
+    color: white;
+}
+
 .whitebtn img {
     width: 14px;
     margin-left: 10px;

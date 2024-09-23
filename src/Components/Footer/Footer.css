@@ -1,0 +1,40 @@
+.Footer {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    margin-top: 125px;
+    border-bottom-width: 2px;
+    padding-bottom: 40px;
+}
+
+.appContent {
+    width: 45%;
+}
+
+.appContent img {
+    width: 217px;
+}
+
+.appContent p {
+    color: #4B5563;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 20px;
+
+}
+
+.companyContainer h3 {
+    color: #4B5563;
+    font-size: 22px;
+    font-weight: 600;
+
+}
+
+.compnayInfo {
+    color: #4B5563;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+
+}

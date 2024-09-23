@@ -40,9 +40,9 @@ export default function NavBar() {
             <nav>
                 <ul className='content'>
                     <li className='elements'>HOME </li>
-                    <li className='elements'>All Doctors  <hr className='hrr' /></li>
-                    <li className='elements'>ABOUT  <hr className='hrr' /></li>
-                    <li className='elements'>CONTACT <hr className='hrr' /></li>
+                    <li className='elements'>All Doctors  </li>
+                    <li className='elements'>ABOUT  </li>
+                    <li className='elements'>CONTACT </li>
                 </ul>
             </nav>
             <div>
