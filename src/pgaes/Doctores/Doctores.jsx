@@ -5,6 +5,8 @@ import TopInfo from '../../Components/TopInfo/TopInfo'
 import { doctors } from '../../assets/assets_frontend/assets'
 export default function Doctores() {
     const { speciality } = useParams()
+    const { id } = useParams();
+    console.log("id------------", id)
     const [activeTab, setActiveTab] = useState("General physician")
     const FilterData = doctors.filter((data) => data?.speciality == activeTab)
     var intial = 0

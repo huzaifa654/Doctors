@@ -5,7 +5,6 @@ import { specialityData } from '../../../assets/assets_frontend/assets'
 import { Link } from 'react-router-dom'
 
 export default function Speaclity() {
-    console.log("specialityData------", specialityData)
     return (
         <div className='Speaclity'>
             <Title title={"Find by Speciality "} subTitle={`Simply browse through our extensive list of trusted doctors, schedule your appointment hassle-free.`} />

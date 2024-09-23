@@ -31,6 +31,10 @@
     color: #1F2937;
 }
 
+.elements:hover {
+    color: #5F6FFF;
+}
+
 .hrr {
     background: #5F6FFF;
 
