@@ -7,14 +7,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    /* padding: 40px; */
     border-radius: 12px;
     margin: 20px;
+    width: 600px;
+    height: 345px;
 
 }
 
 .docImage img {
-    width: 500px;
+    width: 100%;
 }
 
 .docDescription {
@@ -113,4 +115,50 @@
     font-weight: 500;
     color: #262626;
 
+}
+
+.bookingContainer {
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.booking {
+    font-size: 25px;
+    color: #565656;
+    font-weight: 500;
+
+}
+
+.bookingSlots {
+    background-color: #5F6FFF;
+    width: "40%";
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    padding: 15px;
+    border-radius: 44px;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 87px;
+    height: 127px;
+    justify-content: center;
+    display: flex;
+
+
+}
+
+.slots {
+    display: flex;
+    margin: 20px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.day {
+    align-self: center;
+    align-items: center;
+    justify-content: center;
 }
