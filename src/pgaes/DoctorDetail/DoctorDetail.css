@@ -145,6 +145,7 @@
     height: 127px;
     justify-content: center;
     display: flex;
+    margin-left: 10px;
 
 
 }
@@ -152,8 +153,8 @@
 .slots {
     display: flex;
     margin: 20px;
-    justify-content: space-between;
     align-items: center;
+
 
 }
 
