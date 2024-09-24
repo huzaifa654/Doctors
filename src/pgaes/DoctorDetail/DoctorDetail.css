@@ -1,6 +1,5 @@
 .docDetail {
     display: flex;
-
 }
 
 .docImage {
@@ -70,6 +69,8 @@
     padding-left: 30px;
     border-color: #4B5563;
     margin-left: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .about {
