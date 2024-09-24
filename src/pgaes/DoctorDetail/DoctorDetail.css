@@ -130,7 +130,7 @@
 }
 
 .bookingSlots {
-    background-color: #5F6FFF;
+    cursor: pointer;
     width: "40%";
     font-size: 20px;
     color: white;
@@ -146,6 +146,8 @@
     justify-content: center;
     display: flex;
     margin-left: 10px;
+    border-width: 2px;
+    border-color: #4B5563;
 
 
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import "./DoctorDetail.css"
 import { expIcon, tick_logo } from '../../assets/assets_frontend/assets';
@@ -6,6 +6,7 @@ import { data } from 'autoprefixer';
 export default function DoctorDetail() {
     const location = useLocation();
     const { doctor } = location.state;  // Access the passed doctor object
+    const [activeTab, setActiveTab] = useState('MON')
     const Data = [
         {
             day: "MON",
@@ -65,8 +66,8 @@ export default function DoctorDetail() {
                     <div className='slots'>
                         {Data.map((item, index) => {
                             return (
-                                <div className="bookingSlots">
-                                    <div className="inline-block">
+                                <div className="bookingSlots" style={{ backgroundColor: activeTab == item?.day ? "#5F6FFF" : "white" }} onClick={() => setActiveTab(item?.day)}>
+                                    <div className="inline-block" style={{ color: activeTab == item?.day ? "white" : "black" }}>
                                         <p className='day'>{item?.day}</p>
                                         <p className='date'>{item?.date}</p>
                                     </div>
