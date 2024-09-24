@@ -1,25 +1,16 @@
 import React, { useState } from 'react'
 import './Doctores.css'
-import { useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import TopInfo from '../../Components/TopInfo/TopInfo'
 import { doctors } from '../../assets/assets_frontend/assets'
 export default function Doctores() {
-    const { speciality } = useParams()
-    const { id } = useParams();
-    console.log("id------------", id)
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const speciality = searchParams.get('id');
     const [activeTab, setActiveTab] = useState("General physician")
-    const FilterData = doctors.filter((data) => data?.speciality == activeTab)
-    var intial = 0
-    const [final, setFinal] = useState(10)
-    const handleMoreButton = () => {
-        if (final == 10) {
-            setFinal(15)
-        } else {
-            setFinal(10)
-        }
-        // setFinal(15)
-        console.log("final", final + 5)
-    }
+    const [speaclityData, setSpeaclityData] = useState(speciality)
+    const FilterData = doctors.filter((data) => speciality ? data?.speciality == speaclityData : data?.speciality == activeTab)
+
     const Data = [
         { name: "General physician" },
         { name: "Gynecologist" },
@@ -33,13 +24,29 @@ export default function Doctores() {
             <div className='child'>
                 <p className='browsePara'>Browse through the doctors specialist.</p>
                 <div className="brwoseContainer">
-                    {Data.map((item, value) => {
-                        return (
-                            <div className={activeTab == item?.name ? "brwoseContentBg" : "brwoseContent"} onClick={() => setActiveTab(item?.name)}>
-                                <p>{item?.name}</p>
-                            </div>
-                        )
-                    })}
+                    {speciality ?
+
+                        Data.map((item, value) => {
+                            return (
+                                <div className={speaclityData && (speaclityData == item?.name) ? "brwoseContentBg" : "brwoseContent"} onClick={() => setSpeaclityData(item?.name)}>
+                                    <p>{item?.name}</p>
+                                </div>
+                            )
+                        })
+
+                        :
+
+                        Data.map((item, value) => {
+                            return (
+                                <div className={(activeTab == item?.name) ? "brwoseContentBg" : "brwoseContent"} onClick={() => setActiveTab(item?.name)}>
+                                    <p>{item?.name}</p>
+                                </div>
+                            )
+                        })
+
+
+                    }
+
                 </div>
             </div>
 

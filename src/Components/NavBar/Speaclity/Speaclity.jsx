@@ -11,7 +11,7 @@ export default function Speaclity() {
             <div className="special">
                 {specialityData.map((key, value) => {
                     return (
-                        <Link to={`docters/${key?.speciality}`}>
+                        <Link to={`docters?id=${key?.speciality}`}>
                             <ul>
                                 <img src={key?.image} alt="" />
                                 <li>{key?.speciality}</li>

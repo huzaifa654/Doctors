@@ -29,23 +29,25 @@
 //     )
 // }
 
-import React from 'react'
+import React, { useState } from 'react'
 import "./NavBar.css"
 import { logo } from '../../assets/assets_frontend/assets'
 import { useNavigate } from 'react-router-dom'
 
 export default function NavBar() {
     const navigate = useNavigate()
+    const [activeTab, setActiveTab] = useState('HOME')
+
 
     return (
         <div className='nav'>
             <img src={logo} alt="" />
             <nav>
                 <ul className='content'>
-                    <li className='elements' onClick={() => navigate('/')}>HOME </li>
-                    <li className='elements' onClick={() => navigate('/docters')}>All Doctors  </li>
-                    <li className='elements' onClick={() => navigate('/about')}>ABOUT  </li>
-                    <li className='elements' onClick={() => navigate('/contact')}>CONTACT </li>
+                    <li className='elements' style={{ borderBottomWidth: activeTab == "HOME" && 4, borderColor: "#5F6FFF" }} onClick={() => { setActiveTab('HOME'); navigate('/') }}>HOME </li>
+                    <li className='elements' style={{ borderBottomWidth: activeTab == "All Doctors" && 4, borderColor: "#5F6FFF" }} onClick={() => { setActiveTab('All Doctors'); navigate('/docters') }}>All Doctors</li>
+                    <li className='elements' style={{ borderBottomWidth: activeTab == "ABOUT" && 4, borderColor: "#5F6FFF" }} onClick={() => { setActiveTab("ABOUT"); navigate('/about') }}>ABOUT</li>
+                    <li className='elements' style={{ borderBottomWidth: activeTab == "CONTACT" && 4, borderColor: "#5F6FFF" }} onClick={() => { setActiveTab("CONTACT"); navigate('/contact') }}>CONTACT </li>
                 </ul>
             </nav>
             <div>
