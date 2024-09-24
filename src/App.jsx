@@ -9,6 +9,8 @@ import MyProfile from "../src/pgaes/MyProfile/MyProfile"
 import MyAppointments from "../src/pgaes/MyAppointments/MyAppointments"
 import Appointment from "../src/pgaes/Appointment/Appointment"
 import NavBar from './Components/NavBar/NavBar'
+import DoctorDetail from "../src/pgaes/DoctorDetail/DoctorDetail"
+
 
 
 
@@ -22,6 +24,7 @@ export default function App() {
         <Route path='/' element={<Home />} />
         <Route path='/docters' element={<Docteres />} />
         <Route path='/docters:speciality' element={<Docteres />} />
+        <Route path='/doctorDetail' element={<DoctorDetail />} />
         <Route path='/login' element={<Login />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />

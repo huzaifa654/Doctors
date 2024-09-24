@@ -1,8 +1,8 @@
 import React from 'react'
 import "./TopInfo.css"
-export default function TopInfo({ source, speciality, name }) {
+export default function TopInfo({ source, speciality, name, onClick }) {
     return (
-        <div className='topContainer'>
+        <div className='topContainer' onClick={onClick}>
             <ul>
                 <div className="imageContainer">
                     <img src={source} alt="" />

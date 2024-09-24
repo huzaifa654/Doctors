@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import './Doctores.css'
-import { useLocation, useParams } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import TopInfo from '../../Components/TopInfo/TopInfo'
 import { doctors } from '../../assets/assets_frontend/assets'
 export default function Doctores() {
     const location = useLocation();
+    const navigate = useNavigate()
     const searchParams = new URLSearchParams(location.search);
     const speciality = searchParams.get('id');
     const [activeTab, setActiveTab] = useState("General physician")
@@ -54,7 +55,11 @@ export default function Doctores() {
                 {FilterData.map((item, value) => {
                     return (
                         <div className='docinfocontainer'>
-                            <TopInfo name={item?.name} source={item?.image} speciality={item?.speciality} />
+                            <TopInfo
+                                name={item?.name}
+                                source={item?.image}
+                                speciality={item?.speciality}
+                                onClick={() => navigate('/doctorDetail', { state: { doctor: item } })} />
                         </div>
                     )
                 })}
