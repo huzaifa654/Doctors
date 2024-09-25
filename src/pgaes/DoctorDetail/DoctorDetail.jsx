@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import "./DoctorDetail.css"
-import { expIcon, tick_logo } from '../../assets/assets_frontend/assets';
+import { doctors, expIcon, tick_logo } from '../../assets/assets_frontend/assets';
 import { data } from 'autoprefixer';
+import TopInfo from '../../Components/TopInfo/TopInfo';
+import Title from '../../Components/NavBar/Title/Title';
 export default function DoctorDetail() {
     const location = useLocation();
     const { doctor } = location.state;  // Access the passed doctor object
     const [activeTab, setActiveTab] = useState('MON')
+    const [activeSlot, setActiveSlot] = useState('')
     const Data = [
         {
             day: "MON",
@@ -107,6 +110,10 @@ export default function DoctorDetail() {
             ]
         },
     ]
+    const FilterData = Data.find((data) => activeTab == data?.day)
+    const DocFilterData = doctors.filter((data) => data?.speciality == doctor?.speciality)
+    console.log("FilterData--------", FilterData)
+    const navigate = useNavigate()
     return (
         <div className="docs">
             <div className='docDetail'>
@@ -136,33 +143,46 @@ export default function DoctorDetail() {
                     <div className='slots'>
                         {Data.map((item, index) => {
                             return (
-                                <div className='inline-block'>
-                                    <div className="bookingSlots" style={{ backgroundColor: activeTab == item?.day ? "#5F6FFF" : "white" }} onClick={() => setActiveTab(item?.day)}>
-                                        <div className="inline-block" style={{ color: activeTab == item?.day ? "white" : "black" }}>
-                                            <p className='day'>{item?.day}</p>
-                                            <p className='date'>{item?.date}</p>
-                                        </div>
 
-                                    </div>
-                                    <div className="timeSlots">
-                                        {activeTab == item?.day && item?.time.map((item, index) => {
-                                            return (
-                                                <div className="timeslotContainer">
-                                                    <p>{item?.timeSlot}</p>
-                                                </div>
-                                            )
-                                        })}
+                                <div className="bookingSlots" style={{ backgroundColor: activeTab == item?.day ? "#5F6FFF" : "white" }} onClick={() => { setActiveTab(item?.day); setActiveSlot('') }}>
+                                    <div className="inline-block" style={{ color: activeTab == item?.day ? "white" : "black" }}>
+                                        <p className='day'>{item?.day}</p>
+                                        <p className='date'>{item?.date}</p>
                                     </div>
                                 </div>
-
                             )
                         })}
 
 
                     </div>
+                    <div className="timeSlots">
+                        {FilterData && FilterData?.time?.map((item, index) => {
+                            return (
+                                <div className="timeslotContainer" style={{ backgroundColor: activeSlot == item?.timeSlot && "#5F6FFF" }} onClick={() => setActiveSlot(item?.timeSlot)}>
+                                    <p style={{ color: activeSlot == item?.timeSlot && "white" }}>{item?.timeSlot}</p>
+                                </div>
+                            )
+                        })}
+                    </div>
+
+                    <div className="appointbtn">
+                        <button>Book an appointment</button>
+                    </div>
 
                 </div>
 
+            </div>
+            <div style={{ marginTop: 60 }}>
+                <Title title={"Related Doctors"} subTitle={"Simply browse through our extensive list of trusted doctors."} />
+            </div>
+            <div className="docFilterContainer">
+                {DocFilterData.map((item, index) => {
+                    return (
+                        <div className="docChild">
+                            <TopInfo name={item?.name} source={item?.image} speciality={item?.speciality} onClick={() => navigate('/doctorDetail', { state: { doctor: item } })} />
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )

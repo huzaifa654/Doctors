@@ -1,0 +1,87 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: center;
+    height: 100vh;
+    margin-top: 120px;
+}
+
+.LoginContainer {
+    border-width: 2px;
+    border-color: #D4D4D4;
+    border-radius: 20px;
+    padding: 20px;
+    width: 30%;
+    display: flex;
+    /* Set to flexbox */
+    flex-direction: column;
+    /* Stack items vertically */
+    justify-content: center;
+    /* padding-top: 25px;
+    padding-bottom: 25px; */
+}
+
+.LoginContainer h2 {
+    /* text-align: start; */
+    color: #4B5563;
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 20px;
+
+}
+
+.loginText {
+    font-size: 18px;
+    color: #4B5563;
+    margin-top: 4px;
+}
+
+.emailText {
+    font-size: 16px;
+    color: #4B5563;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 5px;
+
+}
+
+.loginBtn {
+    width: 415px;
+    background: #5F6FFF;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.input {
+    width: 90%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-width: 2px;
+    border-radius: 4px;
+    border-color: #DADADA;
+    padding-left: 10px;
+    outline: none;
+
+}
+
+.bottomText {
+    font-size: 16px;
+    color: #5E5E5E;
+    font-weight: 400;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #5F6FFF;
+    margin-left: 5px;
+    text-decoration: underline;
+}

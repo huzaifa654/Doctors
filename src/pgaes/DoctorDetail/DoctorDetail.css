@@ -147,8 +147,8 @@
     display: flex;
     margin-left: 10px;
     border-width: 2px;
-    border-color: #4B5563;
-
+    border-color: #9CA3AF;
+    box-shadow: 10px 10px 5px -59px rgba(72, 77, 77, 0.75);
 
 }
 
@@ -169,7 +169,57 @@
 .timeSlots {
     display: flex;
     margin-top: 15px;
-    position: fixed;
-    align-items: start;
-    left: 45;
+    margin-left: 25px;
+    align-items: center;
+    cursor: pointer;
+
+
+}
+
+.timeslotContainer {
+    margin-left: 15px;
+    border-width: 1px;
+    border-color: #B4B4B4;
+    padding: 10px;
+    border-radius: 44px;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+.appointbtn {
+    background: #5F6FFF;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-top: 40px;
+    width: 20%;
+    border-radius: 40px;
+    margin-left: 25px;
+    font-size: 16px;
+}
+
+.docFilterContainer {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+
+}
+
+.docChild {
+    margin-left: 40px;
+    border-width: 2px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.docChild:hover {
+    transform: scale(1.1);
 }
