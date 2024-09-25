@@ -45,3 +45,54 @@
 .nav ul li hr {
     background-color: #5F6FFF;
 }
+
+.userContainer {
+
+    display: flex;
+    width: 49px;
+    cursor: pointer;
+    margin-right: 50px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.profile {
+    /* width: 100%; */
+    width: 49px;
+    border-radius: 100;
+
+}
+
+.drop {
+    width: 13.15px;
+    height: 9.5px;
+    margin-left: 10px;
+
+}
+
+.dropDwon {
+    background: #F8F8F8;
+    padding: 10px;
+    align-items: start;
+    position: absolute;
+    left: -150px;
+    width: 230px;
+    top: 23px;
+    padding-bottom: 15px;
+}
+
+.text {
+    color: #4B5563;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+
+
+.dropChild {
+    position: relative;
+}

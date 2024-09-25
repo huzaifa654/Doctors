@@ -3,12 +3,15 @@ import "./Login.css"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { SetIsLogin } from '../../redux/reducer/AuthReducer';
 
 export default function Login() {
     const notify = () => toast.error("Plaese Login!");
     const navigate = useNavigate()
     const [Email, setEmail] = useState('')
     const [Password, setPassword] = useState('')
+    const dispatch = useDispatch()
     const handleLogin = () => {
         if (Email == "" && Password == "") {
             toast.error("Plaese Enter All Fields!");
@@ -18,6 +21,7 @@ export default function Login() {
             toast.error("Plaese Enter Email!");
         } else {
             toast.success("Login Successfully")
+            dispatch(SetIsLogin(true))
             navigate('/')
 
         }
@@ -33,7 +37,9 @@ export default function Login() {
                     <input className='input' type="Email" onChange={(e) => setEmail(e?.target?.value)} value={Email} />
                     <p className='emailText'  >Password</p>
                     <input className='input' type="Password" onChange={(e) => setPassword(e?.target?.value)} value={Password} />
-                    <button className='loginBtn' onClick={handleLogin}>Login</button>
+                    <div className="loginButton">
+                        <button className="loginBtn" onClick={handleLogin}>Login</button>
+                    </div>
                     <p className='bottomText'>Already have an account?<span className='highlight'>Login here</span> </p>
                 </div>
             </div>

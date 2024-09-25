@@ -1,11 +1,8 @@
-// src/store.js
 import { configureStore } from '@reduxjs/toolkit';
-import DoctorReducer from './DoctorReducer';
+import rootReducer from './CombineReducer';
 
 const store = configureStore({
-    reducer: {
-        doctor: DoctorReducer,
-    },
+    reducer: rootReducer
 });
 
 export default store;

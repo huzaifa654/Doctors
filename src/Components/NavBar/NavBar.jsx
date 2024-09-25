@@ -1,43 +1,26 @@
-// import React from 'react'
-// import "./NavBar.css"
-// import { logo } from '../../assets/assets_frontend/assets'
-// import { NavLink } from 'react-router-dom'
-// export default function NavBar() {
-//     return (
-//         <div className='flex items-center justify-between text-sm py-4 mb-5 border-b border-b-gray-40' >
-//             <img className='w-44 cursor-pointer' src={logo} alt="" />
-//             <ul className='hidden md:flex items-start gap-5 font-medium'>
-//                 <NavLink>
-//                     <li className='py-4'>HOME</li>
-//                     <hr className='border-none outline-none h-0.5 bg-prmary m-auto' />
-//                 </NavLink>
-//                 <NavLink>
-//                     <li className='py-4'>All Doctors</li>
-//                     <hr className='border-none outline-none h-0.5 bg-prmary m-auto' />
-//                 </NavLink>
-//                 <NavLink>
-//                     <li className='py-4'>ABOUT</li>
-//                     <hr className='border-none outline-none h-0.5 bg-prmary m-auto' />
-//                 </NavLink>
-//                 <NavLink>
-//                     <li className='py-4'>Contact</li>
-//                     <hr className='border-none outline-none h-0.5 bg-prmary m-auto' />
-//                 </NavLink>
-//             </ul>
-//             <div><button>Create Account</button></div>
-//         </div>
-//     )
-// }
-
 import React, { useState } from 'react'
 import "./NavBar.css"
-import { logo } from '../../assets/assets_frontend/assets'
+import { dropdown_icon, logo, profile_pic } from '../../assets/assets_frontend/assets'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux';
+import { SetIsLogin } from '../../redux/reducer/AuthReducer';
 
 export default function NavBar() {
+    const isLogin = useSelector((state) => state.auth.IsLogin);
+    console.log("isLogin-----------------", isLogin);
+    const [dropDown, setDropDown] = useState(false);
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     const [activeTab, setActiveTab] = useState('HOME')
-
+    const DropDown = () => {
+        return (
+            <div className='dropDwon'>
+                <p className='text' onClick={() => { setDropDown(false) }}>My Profile</p>
+                <p className='text' onClick={() => { setDropDown(false) }}>My Appointments</p>
+                <p className='text' onClick={() => { navigate('/login'); dispatch(SetIsLogin(false)); setDropDown(false); }}>Logout</p>
+            </div>
+        )
+    }
 
     return (
         <div className='nav'>
@@ -51,7 +34,23 @@ export default function NavBar() {
                 </ul>
             </nav>
             <div>
-                <button className='btn' onClick={() => navigate('/login')}>Create Account</button>
+                {isLogin ?
+                    <div >
+                        <div className="userContainer" onClick={() => setDropDown(!dropDown)}>
+                            <img className='profile' src={profile_pic} alt="" />
+                            <img className='drop' src={dropdown_icon} alt="" />
+                        </div>
+                        <div className="dropChild">
+                            {dropDown && <DropDown />}
+                        </div>
+
+                    </div>
+
+
+                    :
+                    <button className='btn' onClick={() => navigate('/login')}>Create Account</button>
+
+                }
             </div>
         </div>
     )
