@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Route, Routes } from 'react-router-dom'
 import Home from "../src/pgaes/Home/Home"
 import Docteres from "../src/pgaes/Doctores/Doctores"
@@ -10,6 +11,7 @@ import MyAppointments from "../src/pgaes/MyAppointments/MyAppointments"
 import Appointment from "../src/pgaes/Appointment/Appointment"
 import NavBar from './Components/NavBar/NavBar'
 import DoctorDetail from "../src/pgaes/DoctorDetail/DoctorDetail"
+import Footer from './Components/Footer/Footer'
 
 
 
@@ -32,6 +34,10 @@ export default function App() {
         <Route path='/my-appointments' element={<MyAppointments />} />
         <Route path='/my-appointments:docId' element={<Appointment />} />
       </Routes>
+      <Footer />
+      <div className='lastPara'>
+        <p>Copyright © 2024 GreatStack - All Right Reserved.</p>
+      </div>
     </div>
   )
 }

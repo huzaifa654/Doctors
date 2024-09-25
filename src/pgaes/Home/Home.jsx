@@ -13,10 +13,7 @@ export default function Home() {
             <Speaclity />
             <TopDoctors />
             <BookAppointment />
-            <Footer />
-            <div className='lastPara'>
-                <p>Copyright © 2024 GreatStack - All Right Reserved.</p>
-            </div>
+
         </div>
     )
 }
