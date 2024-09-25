@@ -10,31 +10,101 @@ export default function DoctorDetail() {
     const Data = [
         {
             day: "MON",
-            date: 10
+            date: 10,
+            time: [
+                { timeSlot: "8:00 am" },
+                { timeSlot: "8:30 am" },
+                { timeSlot: "9:00 am" },
+                { timeSlot: "9:30 am" },
+                { timeSlot: "10:00 am" },
+                { timeSlot: "10:30 am" },
+                { timeSlot: "11:00 am" },
+                { timeSlot: "11:30 am" },
+            ]
         },
         {
             day: "TUE",
-            date: 11
+            date: 11,
+            time: [
+                { timeSlot: "8:00 am" },
+                { timeSlot: "8:30 am" },
+                { timeSlot: "9:00 am" },
+                { timeSlot: "9:30 am" },
+                { timeSlot: "10:00 am" },
+                { timeSlot: "10:30 am" },
+                { timeSlot: "11:00 am" },
+                { timeSlot: "11:30 am" },
+            ]
         },
         {
             day: "WED",
-            date: 12
+            date: 12,
+            time: [
+                { timeSlot: "8:00 am" },
+                { timeSlot: "8:30 am" },
+                { timeSlot: "9:00 am" },
+                { timeSlot: "9:30 am" },
+                { timeSlot: "10:00 am" },
+                { timeSlot: "10:30 am" },
+                { timeSlot: "11:00 am" },
+                { timeSlot: "11:30 am" },
+            ]
         },
         {
             day: "THU",
-            date: 13
+            date: 13,
+            time: [
+                { timeSlot: "8:00 am" },
+                { timeSlot: "8:30 am" },
+                { timeSlot: "9:00 am" },
+                { timeSlot: "9:30 am" },
+                { timeSlot: "10:00 am" },
+                { timeSlot: "10:30 am" },
+                { timeSlot: "11:00 am" },
+                { timeSlot: "11:30 am" },
+            ]
         },
         {
             day: "FRI",
-            date: 14
+            date: 14,
+            time: [
+                { timeSlot: "8:00 am" },
+                { timeSlot: "8:30 am" },
+                { timeSlot: "9:00 am" },
+                { timeSlot: "9:30 am" },
+                { timeSlot: "10:00 am" },
+                { timeSlot: "10:30 am" },
+                { timeSlot: "11:00 am" },
+                { timeSlot: "11:30 am" },
+            ]
         },
         {
             day: "SAT",
-            date: 15
+            date: 15,
+            time: [
+                { timeSlot: "8:00 am" },
+                { timeSlot: "8:30 am" },
+                { timeSlot: "9:00 am" },
+                { timeSlot: "9:30 am" },
+                { timeSlot: "10:00 am" },
+                { timeSlot: "10:30 am" },
+                { timeSlot: "11:00 am" },
+                { timeSlot: "11:30 am" },
+            ]
         },
         {
             day: "SUN",
-            date: 16
+            date: 16,
+            time: [
+                { timeSlot: "8:00 am" },
+                { timeSlot: "8:30 am" },
+                { timeSlot: "9:00 am" },
+                { timeSlot: "9:30 am" },
+                { timeSlot: "10:00 am" },
+                { timeSlot: "10:30 am" },
+                { timeSlot: "11:00 am" },
+                { timeSlot: "11:30 am" },
+            ]
         },
     ]
     return (
@@ -66,12 +136,25 @@ export default function DoctorDetail() {
                     <div className='slots'>
                         {Data.map((item, index) => {
                             return (
-                                <div className="bookingSlots" style={{ backgroundColor: activeTab == item?.day ? "#5F6FFF" : "white" }} onClick={() => setActiveTab(item?.day)}>
-                                    <div className="inline-block" style={{ color: activeTab == item?.day ? "white" : "black" }}>
-                                        <p className='day'>{item?.day}</p>
-                                        <p className='date'>{item?.date}</p>
+                                <div className='inline-block'>
+                                    <div className="bookingSlots" style={{ backgroundColor: activeTab == item?.day ? "#5F6FFF" : "white" }} onClick={() => setActiveTab(item?.day)}>
+                                        <div className="inline-block" style={{ color: activeTab == item?.day ? "white" : "black" }}>
+                                            <p className='day'>{item?.day}</p>
+                                            <p className='date'>{item?.date}</p>
+                                        </div>
+
+                                    </div>
+                                    <div className="timeSlots">
+                                        {activeTab == item?.day && item?.time.map((item, index) => {
+                                            return (
+                                                <div className="timeslotContainer">
+                                                    <p>{item?.timeSlot}</p>
+                                                </div>
+                                            )
+                                        })}
                                     </div>
                                 </div>
+
                             )
                         })}
 

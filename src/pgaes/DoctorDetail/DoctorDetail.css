@@ -165,3 +165,11 @@
     align-items: center;
     justify-content: center;
 }
+
+.timeSlots {
+    display: flex;
+    margin-top: 15px;
+    position: fixed;
+    align-items: start;
+    left: 45;
+}
