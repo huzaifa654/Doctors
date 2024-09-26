@@ -33,6 +33,8 @@ export default function NavBar() {
 
     return (
         <div className='nav'>
+            {isModalOpen && <SignOutModal isModalOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onLogout={() => { dispatch(SetIsLogin(false)); navigate('/login'); setIsModalOpen(false); }} />}
+
             <img src={logo} alt="" />
             <nav>
                 <ul className='content'>
@@ -62,7 +64,6 @@ export default function NavBar() {
 
                 }
             </div>
-            {isModalOpen && <SignOutModal isModalOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onLogout={() => { dispatch(SetIsLogin(false)); navigate('/login'); setIsModalOpen(false); }} />}
         </div>
     )
 }
