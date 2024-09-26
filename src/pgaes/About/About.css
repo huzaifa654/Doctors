@@ -1,0 +1,16 @@
+.about {
+    display: flex;
+    flex-direction: column;
+
+}
+.image{
+    /* width: 100%; */
+   
+}
+
+.infoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}

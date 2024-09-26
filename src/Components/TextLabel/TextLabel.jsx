@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function TextLabel({ text, fontSize, color, fontWeight, marginTop, marginLeft, marginBottom, textAlign }) {
+export default function TextLabel({ lineHeight,width, style, alignSelf, text, fontSize, color, fontWeight, marginTop, marginLeft, marginBottom, textAlign, span }) {
     return (
-        <div>
+        <div className="flex">
             <p style={{
                 fontSize: fontSize ? fontSize : 16,
                 color: color ? color : "#171717",
@@ -11,8 +11,11 @@ export default function TextLabel({ text, fontSize, color, fontWeight, marginTop
                 marginLeft: marginLeft ? marginLeft : 12,
                 marginBottom: marginBottom && marginBottom,
                 textAlign: textAlign && textAlign,
-                alignSelf: alignSelf && alignSelf
-            }}>{text}</p>
+                alignSelf: alignSelf && alignSelf,
+                width: width && width,
+                lineHeight:lineHeight && lineHeight
+            }}>{text} {span && <span style={style}>{span}</span>}</p>
+
         </div>
     )
 }
