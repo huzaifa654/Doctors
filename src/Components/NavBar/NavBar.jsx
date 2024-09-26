@@ -4,7 +4,6 @@ import { dropdown_icon, logo, profile_pic } from '../../assets/assets_frontend/a
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { SetIsLogin } from '../../redux/reducer/AuthReducer';
-import Modal from '../Modal/Modal';
 import SignOutModal from '../SignOutModal/SignOutModal';
 
 export default function NavBar() {
@@ -44,7 +43,7 @@ export default function NavBar() {
                 </ul>
             </nav>
 
-            <div>
+            <div >
                 {isLogin ?
                     <div >
                         <div className="userContainer" onClick={() => setDropDown(!dropDown)}>
@@ -63,7 +62,7 @@ export default function NavBar() {
 
                 }
             </div>
-            <SignOutModal isModalOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onLogout={() => { dispatch(SetIsLogin(false)); navigate('/login'); setIsModalOpen(false); }} />
+            {isModalOpen && <SignOutModal isModalOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onLogout={() => { dispatch(SetIsLogin(false)); navigate('/login'); setIsModalOpen(false); }} />}
         </div>
     )
 }
