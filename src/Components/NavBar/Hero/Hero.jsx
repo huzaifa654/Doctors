@@ -9,12 +9,12 @@ export default function Hero() {
                 <h1>Book Appointment <br />With Trusted Doctors</h1>
                 <div className="info">
                     <img src={group_profiles} alt="" />
-                    <p>Simply browse through our extensive list of trusted doctors,<br />
+                    <p className='desc'>Simply browse through our extensive list of trusted doctors,<br />
                         schedule your appointment hassle-free.</p>
                 </div>
                 <button className='whitebtn'>Book appointment <img src={arrow_icon} alt="" /></button>
             </div>
-            <img src={header_img} alt="" />
+            <img className='header_img' src={header_img} alt="" />
         </div>
     )
 }

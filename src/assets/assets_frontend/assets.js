@@ -39,10 +39,13 @@ import Gynecologist from './Gynecologist.svg'
 import Neurologist from './Neurologist.svg'
 import Pediatricians from './Pediatricians.svg'
 import expIcon from './exp.png'
+import warning from './warning.png'
+
 
 
 
 export {
+    warning,
     expIcon,
     tick_logo,
     appointment_img,

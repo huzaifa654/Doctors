@@ -34,3 +34,27 @@
     width: 882px;
     height: 569px;
 }
+
+@media (max-width: 896px) {
+    .appoint h1 {
+        font-size: 30px;
+        font-weight: 600;
+        color: white;
+
+    }
+
+    .header_img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .info img {
+        height: 50px;
+
+    }
+
+    .desc {
+        font-size: 14px;
+        width: 50%;
+    }
+}

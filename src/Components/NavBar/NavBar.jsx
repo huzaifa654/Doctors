@@ -4,6 +4,8 @@ import { dropdown_icon, logo, profile_pic } from '../../assets/assets_frontend/a
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { SetIsLogin } from '../../redux/reducer/AuthReducer';
+import Modal from '../Modal/Modal';
+import SignOutModal from '../SignOutModal/SignOutModal';
 
 export default function NavBar() {
     const isLogin = useSelector((state) => state.auth.IsLogin);
@@ -12,12 +14,20 @@ export default function NavBar() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [activeTab, setActiveTab] = useState('HOME')
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const handleOpenModal = () => {
+        setIsModalOpen(true);
+    };
+
+
     const DropDown = () => {
         return (
             <div className='dropDwon'>
                 <p className='text' onClick={() => { setDropDown(false) }}>My Profile</p>
                 <p className='text' onClick={() => { setDropDown(false) }}>My Appointments</p>
-                <p className='text' onClick={() => { navigate('/login'); dispatch(SetIsLogin(false)); setDropDown(false); }}>Logout</p>
+                {/* <p className='text' onClick={() => { navigate('/login'); dispatch(SetIsLogin(false)); setDropDown(false); }}>Logout</p> */}
+                <p className='text' onClick={() => { setDropDown(false); handleOpenModal() }}>Logout</p>
+
             </div>
         )
     }
@@ -33,6 +43,7 @@ export default function NavBar() {
                     <li className='elements' style={{ borderBottomWidth: activeTab == "CONTACT" && 4, borderColor: "#5F6FFF" }} onClick={() => { setActiveTab("CONTACT"); navigate('/contact') }}>CONTACT </li>
                 </ul>
             </nav>
+
             <div>
                 {isLogin ?
                     <div >
@@ -52,6 +63,7 @@ export default function NavBar() {
 
                 }
             </div>
+            <SignOutModal isModalOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onLogout={() => { dispatch(SetIsLogin(false)); navigate('/login'); setIsModalOpen(false); }} />
         </div>
     )
 }

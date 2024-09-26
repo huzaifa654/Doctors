@@ -96,3 +96,11 @@
 .dropChild {
     position: relative;
 }
+
+@media (max-width: 896px) {
+    .nav img {
+        width: 150px;
+        align-self: center;
+    }
+
+}
