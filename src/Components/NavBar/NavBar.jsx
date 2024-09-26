@@ -8,7 +8,7 @@ import SignOutModal from '../SignOutModal/SignOutModal';
 
 export default function NavBar() {
     const isLogin = useSelector((state) => state.auth.IsLogin);
-    console.log("isLogin-----------------", isLogin);
+
     const [dropDown, setDropDown] = useState(false);
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -17,16 +17,14 @@ export default function NavBar() {
     const handleOpenModal = () => {
         setIsModalOpen(true);
     };
-
+    const loginSate = localStorage.getItem("login")
 
     const DropDown = () => {
         return (
             <div className='dropDwon'>
                 <p className='text' onClick={() => { setDropDown(false) }}>My Profile</p>
                 <p className='text' onClick={() => { setDropDown(false) }}>My Appointments</p>
-                {/* <p className='text' onClick={() => { navigate('/login'); dispatch(SetIsLogin(false)); setDropDown(false); }}>Logout</p> */}
                 <p className='text' onClick={() => { setDropDown(false); handleOpenModal() }}>Logout</p>
-
             </div>
         )
     }

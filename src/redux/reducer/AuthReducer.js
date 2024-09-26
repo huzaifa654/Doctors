@@ -7,6 +7,7 @@ export const AuthReducer = createSlice({
     reducers: {
         SetIsLogin: (state, action) => {
             state.IsLogin = action.payload;
+
         },
     },
 });
