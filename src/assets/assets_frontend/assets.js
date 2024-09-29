@@ -2,6 +2,7 @@ import appointment_img from './appointment_img.png'
 import header_img from './header_img.png'
 import group_profiles from './group_profiles.png'
 import profile_pic from './profile_pic.png'
+import profile_pic2 from './profile_pic2.png'
 import contact_image from './contact_image.png'
 import about_image from './about_image.png'
 import logo from './logo.svg'
@@ -16,6 +17,8 @@ import upload_icon from './upload_icon.png'
 import stripe_logo from './stripe_logo.png'
 import razorpay_logo from './razorpay_logo.png'
 import tick_logo from './Tick.png'
+import upload_area from './upload_area.png'
+
 
 import doc1 from './doc1.png'
 import doc2 from './doc2.png'
@@ -45,6 +48,8 @@ import warning from './warning.png'
 
 
 export {
+    profile_pic2,
+    upload_area,
     warning,
     expIcon,
     tick_logo,

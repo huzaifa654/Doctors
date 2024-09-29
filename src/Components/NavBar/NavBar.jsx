@@ -17,13 +17,12 @@ export default function NavBar() {
     const handleOpenModal = () => {
         setIsModalOpen(true);
     };
-    const loginSate = localStorage.getItem("login")
 
     const DropDown = () => {
         return (
             <div className='dropDwon'>
-                <p className='text' onClick={() => { setDropDown(false) }}>My Profile</p>
-                <p className='text' onClick={() => { setDropDown(false) }}>My Appointments</p>
+                <p className='text' onClick={() => { setDropDown(false); navigate('/my-profile') }}>My Profile</p>
+                <p className='text' onClick={() => { setDropDown(false); navigate('/my-appointments') }}>My Appointments</p>
                 <p className='text' onClick={() => { setDropDown(false); handleOpenModal() }}>Logout</p>
             </div>
         )

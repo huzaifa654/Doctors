@@ -27,7 +27,8 @@ export default function About() {
                         width={"70%"}
                         marginLeft={30}
                         marginBottom={5}
-                        lineHeight={2}
+                        lineHeight={1.5}
+                        marginTop={20}
 
                     />
                     <TextLabel
@@ -36,21 +37,24 @@ export default function About() {
                         width={"70%"}
                         marginLeft={30}
                         marginBottom={5}
-                        lineHeight={2}
+                        lineHeight={1.5}
+                        marginTop={20}
 
                     />
                     <TextLabel
                         text={"Our Vision"}
                         fontWeight={"700"}
-                        marginLeft={30}
-                        marginBottom={5}
+                        marginLeft={20}
+                        marginBottom={1.5}
+                        marginTop={20}
                     />
                     <TextLabel
                         text={"Our vision at Prescripto is to create a seamless healthcare experience for every user. We aim to bridge the gap between patients and healthcare providers, making it easier for you to access the care you need, when you need it."}
                         color={"#4B5563"}
                         width={"70%"}
                         marginLeft={30}
-                        lineHeight={2}
+                        lineHeight={1.5}
+                        marginTop={20}
                     />
 
                 </div>

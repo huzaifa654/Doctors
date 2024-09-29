@@ -5,6 +5,8 @@ import { doctors, expIcon, tick_logo } from '../../assets/assets_frontend/assets
 import { data } from 'autoprefixer';
 import TopInfo from '../../Components/TopInfo/TopInfo';
 import Title from '../../Components/NavBar/Title/Title';
+import DisplayFlex from '../../Components/DisplayFlex/DisplayFlex';
+import ImageContainer from '../../Components/ImageContainer/ImageContainer';
 export default function DoctorDetail() {
     const location = useLocation();
     const { doctor } = location.state;  // Access the passed doctor object
@@ -130,10 +132,10 @@ export default function DoctorDetail() {
                             <p>{doctor?.speciality}</p>
                             <div className="experince">{doctor?.experience}</div>
                         </div>
-                        <div className="about">
+                        <DisplayFlex marginLeft={18} marginTop={12}>
                             <p>About</p>
-                            <img src={expIcon} alt="" />
-                        </div>
+                            <ImageContainer source={expIcon} width={17} height={17} marginLeft={6} />
+                        </DisplayFlex>
                         <p className='docAbout'>{doctor?.about}</p>
                         <p className='appoint' > Appointment fee: <span className='highlightedText'>{doctor?.fees}</span></p>
                     </div>
